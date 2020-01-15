@@ -1,6 +1,12 @@
 DROP TABLE IF EXISTS question.user CASCADE;
 DROP TABLE IF EXISTS question.role CASCADE;
 DROP TABLE IF EXISTS question.role_users CASCADE;
+DROP TABLE IF EXISTS question.quest CASCADE;
+DROP TABLE IF EXISTS question.question CASCADE;
+DROP TABLE IF EXISTS question.catalog CASCADE;
+DROP TABLE IF EXISTS question.catalogelem CASCADE;
+DROP TABLE IF EXISTS question.answer CASCADE;
+DROP TABLE IF EXISTS question.question_type CASCADE;
 
 DROP SEQUENCE IF EXISTS question.global_seq CASCADE;
 
