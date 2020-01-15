@@ -33,19 +33,6 @@ CREATE TABLE question.role_users
     FOREIGN KEY (user_id) REFERENCES question.user (id) ON DELETE CASCADE
 );
 
-CREATE TABLE question.user
-(
-    id                      INTEGER PRIMARY KEY DEFAULT nextval('question.global_seq'),
-    name                    VARCHAR                               ,
-    firstname               VARCHAR                               ,
-    lastname                VARCHAR                               ,
-    patronym                VARCHAR                               ,
-    position                VARCHAR                               ,
-    email                   VARCHAR                               ,
-    phone                   VARCHAR                               ,
-    photo                   VARCHAR
-);
-
 CREATE TABLE question.quest
 (
     id                      INTEGER PRIMARY KEY DEFAULT nextval('question.global_seq'),
@@ -58,7 +45,7 @@ CREATE TABLE question.question
 (
     id                      INTEGER PRIMARY KEY DEFAULT nextval('question.global_seq'),
     name                    VARCHAR                                    ,
-    order                   INTEGER                                    ,
+    orderl                   INTEGER                                   ,
     quest_id                INTEGER                                    ,
     question_type_id        INTEGER                                    ,
     catalog_id              INTEGER
