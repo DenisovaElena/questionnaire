@@ -54,7 +54,10 @@ CREATE TABLE question.question
     orderl                   INTEGER                                   ,
     quest_id                INTEGER                                    ,
     question_type_id        INTEGER                                    ,
-    catalog_id              INTEGER
+    catalog_id              INTEGER                                    ,
+    FOREIGN KEY (quest_id) REFERENCES question.question(id)            ,
+    FOREIGN KEY (question_type_id) REFERENCES question.question_type(id),
+    FOREIGN KEY (catalog_id) REFERENCES question.catalog(id)
 );
 
 CREATE TABLE question.question_type
@@ -73,7 +76,8 @@ CREATE TABLE question.catalogelem
 (
   id                        INTEGER PRIMARY KEY DEFAULT nextval('question.global_seq'),
   name                      VARCHAR                                        ,
-  catalog_id                INTEGER
+  catalog_id                INTEGER                                        ,
+  FOREIGN KEY (catalog_id) REFERENCES question.catalogelem(id)
 );
 
 CREATE TABLE question.answer
@@ -83,7 +87,11 @@ CREATE TABLE question.answer
   rate                      VARCHAR                                         ,
   wish                      VARCHAR                                         ,
   goal                      VARCHAR                                         ,
-  question_id               INTEGER
+  question_id               INTEGER                                         ,
+  rating                    INTEGER                                         ,
+  catalogelem_id            INTEGER                                         ,
+  FOREIGN KEY (question_id) REFERENCES question.answer(id)                  ,
+  FOREIGN KEY (catalogelem_id) REFERENCES question.catalogelem(id)
 );
 
 
