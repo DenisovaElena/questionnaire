@@ -23,7 +23,7 @@ public class QuestionServiceImpl implements QuestionService{
     }
 
     @Override
-    public List<Question> getAll(int id) {
+    public List<Question> getAll() {
         return questionRepository.findAll();
     }
 

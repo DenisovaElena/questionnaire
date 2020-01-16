@@ -9,7 +9,7 @@ public interface QuestionService {
 
     Question get(int id) throws NotFoundException;
 
-    List<Question> getAll(int id);
+    List<Question> getAll();
 
     Question save(Question question);
 

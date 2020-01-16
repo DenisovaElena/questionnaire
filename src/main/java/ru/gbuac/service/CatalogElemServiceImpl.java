@@ -23,7 +23,7 @@ public class CatalogElemServiceImpl implements CatalogElemService {
     }
 
     @Override
-    public List<CatalogElem> getAll(int id) {
+    public List<CatalogElem> getAll() {
         return catalogElemRepository.findAll();
     }
 

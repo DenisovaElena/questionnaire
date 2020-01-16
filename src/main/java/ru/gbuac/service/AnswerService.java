@@ -9,7 +9,7 @@ public interface AnswerService {
 
     Answer get(int id) throws NotFoundException;
 
-    List<Answer> getAll(int id);
+    List<Answer> getAll();
 
     Answer save(Answer answer);
 

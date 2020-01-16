@@ -23,7 +23,7 @@ public class QuestServiceImpl implements QuestService {
     }
 
     @Override
-    public List<Quest> getAll(int id) {
+    public List<Quest> getAll() {
         return questRepository.findAll();
     }
 

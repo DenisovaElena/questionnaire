@@ -23,7 +23,7 @@ public class QuestionTypeServiceImpl implements QuestionTypeService{
     }
 
     @Override
-    public List<QuestionType> getAll(int id) {
+    public List<QuestionType> getAll() {
         return questionTypeRepositoryRepository.findAll();
     }
 

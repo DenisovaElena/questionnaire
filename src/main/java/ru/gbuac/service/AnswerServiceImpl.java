@@ -23,7 +23,7 @@ public class AnswerServiceImpl implements AnswerService {
     }
 
     @Override
-    public List<Answer> getAll(int id) {
+    public List<Answer> getAll() {
         return answerRepository.findAll();
     }
 

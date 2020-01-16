@@ -9,7 +9,7 @@ public interface CatalogElemService {
 
     CatalogElem get(int id) throws NotFoundException;
 
-    List<CatalogElem> getAll(int id);
+    List<CatalogElem> getAll();
 
     CatalogElem save(CatalogElem catalogElem);
 

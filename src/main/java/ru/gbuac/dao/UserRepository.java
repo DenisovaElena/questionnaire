@@ -15,13 +15,16 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     @Transactional
     @Modifying
     @Query("DELETE FROM User u WHERE u.id=:id")
-    int delete(@Param("id") int id);
+    void delete(@Param("id") int id);
 
-    @Query("SELECT new ru.gbuac.to.UserTo(e.id, CONCAT(e.lastname, ' ', e.firstname, ' ', e.patronym), e.phone, e" +
+    @Query("SELECT new ru.gbuac.to.UserTo(u.id, CONCAT(u.lastname, ' ', u.firstname, ' ', u.patronym), u.phone, u" +
             ".position) " +
-            "FROM Employee e ORDER BY e.lastname ASC")
+            "FROM User u ORDER BY u.lastname ASC")
     List<UserTo> getAll();
 
-    @Query("SELECT e FROM Employee e WHERE lower(e.name)=lower(:name)")
+    @Query("SELECT u FROM User u WHERE lower(u.name)=lower(:name)")
     User getByName(@Param("name") String name);
+
+    @Query("DELETE FROM User u WHERE lower(u.name)=lower(:name)")
+    void deleteByName(@Param("name") String name);
 }

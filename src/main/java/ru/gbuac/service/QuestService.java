@@ -8,7 +8,7 @@ import java.util.List;
 public interface QuestService {
     Quest get(int id) throws NotFoundException;
 
-    List<Quest> getAll(int id);
+    List<Quest> getAll();
 
     Quest save(Quest quest);
 

@@ -23,7 +23,7 @@ public class CatalogServiceImpl implements CatalogService {
     }
 
     @Override
-    public List<Catalog> getAll(int id) {
+    public List<Catalog> getAll() {
         return catalogRepository.findAll();
     }
 
