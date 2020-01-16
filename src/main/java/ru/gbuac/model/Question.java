@@ -18,8 +18,8 @@ import javax.persistence.*;
 @Table(name = "question")
 public class Question extends NamedEntity {
 
-    @Column(name = "orderl")
-    private Integer orderl;
+    @Column(name = "ordering")
+    private Integer ordering;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "quest_id", nullable = false)

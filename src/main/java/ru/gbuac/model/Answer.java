@@ -19,9 +19,8 @@ import javax.persistence.*;
 @Table(name = "answer")
 public class Answer extends NamedEntity {
 
-    @SafeHtml
-    @Column(name = "rate")
-    private String rate;
+    @Column(name = "rate_first")
+    private Integer rateFirst;
 
     @SafeHtml
     @Column(name = "wish")
@@ -30,6 +29,9 @@ public class Answer extends NamedEntity {
     @SafeHtml
     @Column(name = "goal")
     private String goal;
+
+    @Column(name = "rate_second")
+    private Integer rateSecond;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "question_id", nullable = false)

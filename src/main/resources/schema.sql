@@ -44,7 +44,7 @@ CREATE TABLE question.quest
 (
     id                      INTEGER PRIMARY KEY DEFAULT nextval('question.global_seq'),
     name                    VARCHAR                                 ,
-    create_date             date                                    ,
+    create_date             TIMESTAMP                               ,
     is_active               BOOLEAN
 );
 
@@ -64,7 +64,7 @@ CREATE TABLE question.question
 (
     id                      INTEGER PRIMARY KEY DEFAULT nextval('question.global_seq'),
     name                    VARCHAR                                    ,
-    orderl                   INTEGER                                   ,
+    ordering                INTEGER                                    ,
     quest_id                INTEGER                                    ,
     question_type_id        INTEGER                                    ,
     catalog_id              INTEGER                                    ,
@@ -85,11 +85,11 @@ CREATE TABLE question.answer
 (
   id                        INTEGER PRIMARY KEY DEFAULT nextval('question.global_seq'),
   name                      VARCHAR                                         ,
-  rate                      VARCHAR                                         ,
+  rate_first                INTEGER                                         ,
   wish                      VARCHAR                                         ,
   goal                      VARCHAR                                         ,
   question_id               INTEGER                                         ,
-  rating                    INTEGER                                         ,
+  rate_second               INTEGER                                         ,
   catalogelem_id            INTEGER                                         ,
   FOREIGN KEY (question_id) REFERENCES question.answer(id)                  ,
   FOREIGN KEY (catalogelem_id) REFERENCES question.catalogelem(id)
