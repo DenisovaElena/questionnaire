@@ -10,32 +10,33 @@ import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.sql.Time;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-@Table(name = "question")
-public class Question extends NamedEntity {
+@Table(name = "result")
+public class Result extends BaseEntity {
 
-    @Column(name = "ordering")
-    private Integer ordering;
+    @Column(name = "answer_start")
+    private Time answerStart;
+
+    @Column(name = "answer_modified")
+    private Time answerModified;
+
+    @Column(name = "username")
+    private String username;
 
     @NotNull
     @Enumerated(EnumType.ORDINAL)
-    @Column(name = "question_type_id")
-    private QuestionType questionType;
+    @Column(name = "status_id")
+    private Status status;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "quest_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
     private Quest quest;
-
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "catalog_id", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @JsonIgnore
-    private Catalog catalog;
 }

@@ -44,4 +44,10 @@ public class Answer extends NamedEntity {
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
     private CatalogElem catalogElem;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "result_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonIgnore
+    private Result result;
 }

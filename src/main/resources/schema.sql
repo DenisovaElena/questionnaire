@@ -6,6 +6,7 @@ DROP TABLE IF EXISTS question.question CASCADE;
 DROP TABLE IF EXISTS question.question_type CASCADE;;
 DROP TABLE IF EXISTS question.catalog CASCADE;
 DROP TABLE IF EXISTS question.catalogelem CASCADE;
+DROP TABLE IF EXISTS question.result CASCADE;
 DROP TABLE IF EXISTS question.answer CASCADE;
 
 
@@ -81,6 +82,17 @@ CREATE TABLE question.catalogelem
   FOREIGN KEY (catalog_id) REFERENCES question.catalogelem(id)
 );
 
+CREATE TABLE question.result
+(
+    id                      INTEGER PRIMARY KEY DEFAULT nextval('question.global_seq'),
+    answer_start            TIMESTAMP                                          ,
+    answer_modified         TIMESTAMP                                          ,
+    quest_id                INTEGER                                            ,
+    username                VARCHAR                                            ,
+    status_id               INTEGER                                            ,
+    FOREIGN KEY (quest_id) REFERENCES question.quest(id)
+);
+
 CREATE TABLE question.answer
 (
   id                        INTEGER PRIMARY KEY DEFAULT nextval('question.global_seq'),
@@ -91,8 +103,12 @@ CREATE TABLE question.answer
   question_id               INTEGER                                         ,
   rate_second               INTEGER                                         ,
   catalogelem_id            INTEGER                                         ,
+  result_id                 INTEGER                                         ,
   FOREIGN KEY (question_id) REFERENCES question.answer(id)                  ,
-  FOREIGN KEY (catalogelem_id) REFERENCES question.catalogelem(id)
+  FOREIGN KEY (catalogelem_id) REFERENCES question.catalogelem(id)          ,
+  FOREIGN KEY (result_id) REFERENCES question.result(id)
 );
+
+
 
 
