@@ -3,10 +3,11 @@ DROP TABLE IF EXISTS question.role CASCADE;
 DROP TABLE IF EXISTS question.role_users CASCADE;
 DROP TABLE IF EXISTS question.quest CASCADE;
 DROP TABLE IF EXISTS question.question CASCADE;
+DROP TABLE IF EXISTS question.question_type CASCADE;;
 DROP TABLE IF EXISTS question.catalog CASCADE;
 DROP TABLE IF EXISTS question.catalogelem CASCADE;
 DROP TABLE IF EXISTS question.answer CASCADE;
-DROP TABLE IF EXISTS question.question_type CASCADE;
+
 
 DROP SEQUENCE IF EXISTS question.global_seq CASCADE;
 
@@ -47,6 +48,18 @@ CREATE TABLE question.quest
     is_active               BOOLEAN
 );
 
+CREATE TABLE question.question_type
+(
+    id                        INTEGER PRIMARY KEY DEFAULT nextval('question.global_seq'),
+    name                      VARCHAR
+);
+
+CREATE TABLE question.catalog
+(
+    id                        INTEGER PRIMARY KEY DEFAULT nextval('question.global_seq'),
+    name                      VARCHAR
+);
+
 CREATE TABLE question.question
 (
     id                      INTEGER PRIMARY KEY DEFAULT nextval('question.global_seq'),
@@ -58,18 +71,6 @@ CREATE TABLE question.question
     FOREIGN KEY (quest_id) REFERENCES question.question(id)            ,
     FOREIGN KEY (question_type_id) REFERENCES question.question_type(id),
     FOREIGN KEY (catalog_id) REFERENCES question.catalog(id)
-);
-
-CREATE TABLE question.question_type
-(
-  id                        INTEGER PRIMARY KEY DEFAULT nextval('question.global_seq'),
-  name                      VARCHAR
-);
-
-CREATE TABLE question.catalog
-(
-  id                        INTEGER PRIMARY KEY DEFAULT nextval('question.global_seq'),
-  name                      VARCHAR
 );
 
 CREATE TABLE question.catalogelem
