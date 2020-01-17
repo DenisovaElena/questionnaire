@@ -19,7 +19,8 @@ public class QuestionRestController extends AbstractQuestionRestController {
     }
 
     @Override
-    @GetMapping("/getAllById")    public List<Question> getAll() {
+    @GetMapping("/getAllById")
+    public List<Question> getAll() {
         return super.getAll();
     }
 
@@ -40,7 +41,7 @@ public class QuestionRestController extends AbstractQuestionRestController {
 
     @Override
     @GetMapping
-    public List<Question> getAll(int questId) {
+    public List<Question> getAll(@PathVariable("questId") int questId) {
         return super.getAll(questId);
     }
 }

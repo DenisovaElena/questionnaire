@@ -40,3 +40,5 @@ INSERT INTO question.role_users(role_id, user_id) VALUES (11, 1);
 INSERT INTO question.role_users(role_id, user_id) VALUES (11, 2);
 INSERT INTO question.role_users(role_id, user_id) VALUES (12, 4);
 INSERT INTO question.role_users(role_id, user_id) VALUES (12, 5);
+
+INSERT INTO question.quest(id, name, create_date, is_active) VALUES (1, 'satisf', null, true);
