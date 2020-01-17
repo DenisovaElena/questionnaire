@@ -23,7 +23,7 @@ public class Question extends NamedEntity {
 
     @NotNull
     @Enumerated(EnumType.ORDINAL)
-    @Column(name = "question_type_id")
+    @Column(name = "question_type")
     private QuestionType questionType;
 
     @ManyToOne(fetch = FetchType.EAGER)
