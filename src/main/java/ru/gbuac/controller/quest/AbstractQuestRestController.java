@@ -46,8 +46,5 @@ public abstract class AbstractQuestRestController {
         questService.delete(id);
     }
 
-    public List<Question> getAll(int questId) {
-        LOG.info("getAll");
-        return questService.getAll(questId);
-    }
+
 }

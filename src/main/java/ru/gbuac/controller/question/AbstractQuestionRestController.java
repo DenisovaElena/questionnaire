@@ -43,4 +43,9 @@ public abstract class AbstractQuestionRestController {
         LOG.info("delete " + id);
         questionService.delete(id);
     }
+
+    public List<Question> getAll(int questId) {
+        LOG.info("getAll");
+        return questionService.getAll(questId);
+    }
 }

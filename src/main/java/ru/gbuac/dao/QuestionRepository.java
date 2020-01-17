@@ -15,4 +15,7 @@ public interface QuestionRepository extends JpaRepository<Question, Integer> {
     @Modifying
     @Query("DELETE FROM Question q WHERE q.id=:id")
     int delete(@Param("id") int id);
+
+    @Query("SELECT q FROM Question q WHERE q.quest.id=:questId ORDER BY q.ordering ASC")
+    List<Question> getAll(@Param("questId") int questId);
 }

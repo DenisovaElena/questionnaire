@@ -40,9 +40,5 @@ public class QuestRestController extends AbstractQuestRestController {
         }
     }
 
-    @Override
-    @GetMapping(value = "/{questId}/questions")
-    public List<Question> getAll(int questId) {
-        return super.getAll(questId);
-    }
+
 }

@@ -16,4 +16,6 @@ public interface QuestionService {
     Question update(Question question, int id) throws NotFoundException;
 
     void delete(int id) throws NotFoundException;
+
+    List<Question> getAll(int questId);
 }

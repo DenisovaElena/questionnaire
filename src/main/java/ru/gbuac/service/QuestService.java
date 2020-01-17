@@ -17,5 +17,4 @@ public interface QuestService {
 
     void delete(int id) throws NotFoundException;
 
-    List<Question> getAll(int questId);
 }

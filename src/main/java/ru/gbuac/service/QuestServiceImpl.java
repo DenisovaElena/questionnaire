@@ -45,9 +45,4 @@ public class QuestServiceImpl implements QuestService {
     public void delete(int id) throws NotFoundException {
         questRepository.delete(id);
     }
-
-    @Override
-    public List<Question> getAll(int questId) {
-        return questRepository.getAll(questId);
-    }
 }

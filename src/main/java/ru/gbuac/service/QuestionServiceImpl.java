@@ -44,4 +44,10 @@ public class QuestionServiceImpl implements QuestionService{
     public void delete(int id) throws NotFoundException {
         questionRepository.delete(id);
     }
+
+
+    @Override
+    public List<Question> getAll(int questId) {
+        return questionRepository.getAll(questId);
+    }
 }

@@ -38,4 +38,10 @@ public class QuestionRestController extends AbstractQuestionRestController {
             return super.update(question, question.getId());
         }
     }
+
+    @Override
+    @GetMapping(value = "/{questId}/questions")
+    public List<Question> getAll(int questId) {
+        return super.getAll(questId);
+    }
 }
