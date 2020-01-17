@@ -11,11 +11,11 @@ import java.util.List;
 @RequestMapping(value = ResultRestController.REST_URL, produces = MediaType.APPLICATION_JSON_VALUE)
 public class ResultRestController extends AbstractResultRestController {
 
-    public static final String REST_URL = "/rest/profile/results";
+    public static final String REST_URL = "/rest/profile/quests/{questId}/results";
     @Override
     @GetMapping(value = "/{id}")
-    public Result get(@PathVariable("id") int id) {
-        return super.get(id);
+    public Result get(@PathVariable("id") int id, @PathVariable("questId") int questId) {
+        return super.get(id, questId);
     }
 
     @Override
@@ -37,5 +37,11 @@ public class ResultRestController extends AbstractResultRestController {
         } else {
             return super.update(result, result.getId());
         }
+    }
+
+    @Override
+    @PostMapping(value = "/entire", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public Result saveEntireResult(@Valid @RequestBody Result result) {
+        return super.saveEntireResult(result);
     }
 }

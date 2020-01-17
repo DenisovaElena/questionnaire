@@ -17,9 +17,9 @@ public abstract class AbstractQuestionRestController {
     @Autowired
     protected QuestionService questionService;
 
-    public Question get(int id) {
+    public Question get(int id, int questId) {
         LOG.info("get " + id);
-        return questionService.get(id);
+        return questionService.get(id, questId);
     }
 
     public List<Question> getAll() {

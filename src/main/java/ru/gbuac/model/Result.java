@@ -11,6 +11,7 @@ import org.hibernate.annotations.OnDeleteAction;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.sql.Time;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -38,4 +39,7 @@ public class Result extends BaseEntity {
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
     private Quest quest;
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "result")
+    private List<Answer> answers;
 }

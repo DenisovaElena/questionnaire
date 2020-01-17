@@ -18,7 +18,7 @@ public class QuestionServiceImpl implements QuestionService{
     QuestionRepository questionRepository;
 
     @Override
-    public Question get(int id) throws NotFoundException {
+    public Question get(int id, int questId) throws NotFoundException {
         return checkNotFoundWithId(questionRepository.findById(id).orElse(null), id);
     }
 

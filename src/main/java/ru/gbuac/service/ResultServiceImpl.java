@@ -18,8 +18,9 @@ public class ResultServiceImpl implements ResultService {
     ResultRepository resultRepository;
 
     @Override
-    public Result get(int id) throws NotFoundException {
-        return checkNotFoundWithId(resultRepository.findById(id).orElse(null), id);
+    public Result get(int id, int questId) throws NotFoundException {
+        Result result = resultRepository.findById(id).orElse(null);
+        return checkNotFoundWithId(result != null && result.getQuest().getId() == questId ? result : null, id);
     }
 
     @Override

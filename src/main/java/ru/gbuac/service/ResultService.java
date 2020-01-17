@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface ResultService {
 
-    Result get(int id) throws NotFoundException;
+    Result get(int id, int questId) throws NotFoundException;
 
     List<Result> getAll();
 

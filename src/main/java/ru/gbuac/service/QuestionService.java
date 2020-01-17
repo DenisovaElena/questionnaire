@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface QuestionService {
 
-    Question get(int id) throws NotFoundException;
+    Question get(int id, int questId) throws NotFoundException;
 
     List<Question> getAll();
 
