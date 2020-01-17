@@ -13,7 +13,6 @@ import javax.validation.constraints.NotNull;
 import java.sql.Time;
 
 @Entity
-@NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter

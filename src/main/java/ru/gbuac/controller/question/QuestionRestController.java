@@ -19,8 +19,7 @@ public class QuestionRestController extends AbstractQuestionRestController {
     }
 
     @Override
-    @GetMapping("/getAllById")
-    public List<Question> getAll() {
+    @GetMapping("/getAllById")    public List<Question> getAll() {
         return super.getAll();
     }
 

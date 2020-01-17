@@ -12,7 +12,6 @@ import org.hibernate.validator.constraints.SafeHtml;
 import javax.persistence.*;
 
 @Entity
-@NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter

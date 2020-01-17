@@ -12,7 +12,6 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter

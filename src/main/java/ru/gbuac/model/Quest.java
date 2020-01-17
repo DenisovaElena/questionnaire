@@ -11,7 +11,6 @@ import javax.persistence.Table;
 import java.util.Date;
 
 @Entity
-@NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter

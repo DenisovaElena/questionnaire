@@ -13,12 +13,7 @@ public class RootController {
 
     @GetMapping("/")
     public String root() {
-        return "redirect:login";
-    }
-
-    @GetMapping(value = "/division")
-    public String division() {
-        return "division";
+        return "redirect/questions";
     }
 
     @GetMapping(value = "/admin/quests")

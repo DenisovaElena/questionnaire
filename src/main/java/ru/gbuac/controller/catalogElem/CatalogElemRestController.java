@@ -11,7 +11,7 @@ import java.util.List;
 @RequestMapping(value = CatalogElemRestController.REST_URL, produces = MediaType.APPLICATION_JSON_VALUE)
 public class CatalogElemRestController extends AbstractCatalogElemRestController {
 
-    public static final String REST_URL = "/rest/profile/catalogs";
+    public static final String REST_URL = "/rest/profile/catalogElems";
 
     @Override
     @GetMapping(value = "/{id}")

@@ -11,7 +11,6 @@ import org.hibernate.annotations.OnDeleteAction;
 import javax.persistence.*;
 
 @Entity
-@NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
