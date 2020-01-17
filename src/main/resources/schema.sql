@@ -49,12 +49,6 @@ CREATE TABLE question.quest
     is_active               BOOLEAN
 );
 
-CREATE TABLE question.question_type
-(
-    id                        INTEGER PRIMARY KEY DEFAULT nextval('question.global_seq'),
-    name                      VARCHAR
-);
-
 CREATE TABLE question.catalog
 (
     id                        INTEGER PRIMARY KEY DEFAULT nextval('question.global_seq'),
