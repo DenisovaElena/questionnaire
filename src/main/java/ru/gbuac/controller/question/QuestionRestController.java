@@ -11,7 +11,7 @@ import java.util.List;
 @RequestMapping(value = QuestionRestController.REST_URL, produces = MediaType.APPLICATION_JSON_VALUE)
 public class QuestionRestController extends AbstractQuestionRestController {
 
-    public static final String REST_URL = "/rest/profile/questions";
+    public static final String REST_URL = "/rest/profile/quests/{questId}/questions";
     @Override
     @GetMapping(value = "/{id}")
     public Question get(@PathVariable("id") int id) {
@@ -19,7 +19,7 @@ public class QuestionRestController extends AbstractQuestionRestController {
     }
 
     @Override
-    @GetMapping
+    @GetMapping("/getAllById")
     public List<Question> getAll() {
         return super.getAll();
     }
@@ -40,7 +40,7 @@ public class QuestionRestController extends AbstractQuestionRestController {
     }
 
     @Override
-    @GetMapping(value = "/{questId}/questions")
+    @GetMapping
     public List<Question> getAll(int questId) {
         return super.getAll(questId);
     }
