@@ -1,5 +1,5 @@
 INSERT INTO question.catalog(id, name) VALUES (11, 'Тип оборудования');
-INSERT INTO question.catalog(id, name) VALUES (31, 'Справочник «ПО»');
+INSERT INTO question.catalog(id, name) VALUES (12, 'Справочник «ПО»');
 
 INSERT INTO question.quest(id, name, create_date, is_active) VALUES (1, 'Опрос удовлетворенности качеством
  информационного сопровождения', '10-04-19 12:00:17', true);
