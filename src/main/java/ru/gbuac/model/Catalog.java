@@ -9,7 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @Table(name = "catalog")

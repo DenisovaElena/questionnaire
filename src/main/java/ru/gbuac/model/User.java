@@ -2,6 +2,7 @@ package ru.gbuac.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.validator.constraints.SafeHtml;
 
@@ -9,7 +10,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @Table(name = "user")

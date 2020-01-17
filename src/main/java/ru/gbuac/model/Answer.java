@@ -12,7 +12,7 @@ import org.hibernate.validator.constraints.SafeHtml;
 import javax.persistence.*;
 
 @Entity
-@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @Table(name = "answer")

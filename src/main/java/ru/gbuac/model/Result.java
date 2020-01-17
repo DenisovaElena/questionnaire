@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
 import java.sql.Time;
 
 @Entity
-@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @Table(name = "result")

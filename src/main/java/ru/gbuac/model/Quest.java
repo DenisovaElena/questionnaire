@@ -11,7 +11,7 @@ import javax.persistence.Table;
 import java.util.Date;
 
 @Entity
-@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @Table(name = "quest")

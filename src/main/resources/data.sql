@@ -43,4 +43,4 @@ INSERT INTO question.role_users(role_id, user_id) VALUES (12, 5);
 
 INSERT INTO question.quest(id, name, create_date, is_active) VALUES (1, 'satisf', null, true);
 INSERT INTO question.question(id, name, ordering, quest_id, question_type, catalog_id) VALUES (10, 'question1',
-                                                                                                  NULL, 1, null, null);
+                                                                                                  NULL, 1, 'RATE', null);
