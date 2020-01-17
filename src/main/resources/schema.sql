@@ -67,10 +67,9 @@ CREATE TABLE question.question
     name                    VARCHAR                                    ,
     ordering                INTEGER                                    ,
     quest_id                INTEGER                                    ,
-    question_type_id        INTEGER                                    ,
+    question_type           VARCHAR                                    ,
     catalog_id              INTEGER                                    ,
-    FOREIGN KEY (quest_id) REFERENCES question.question(id)            ,
-    FOREIGN KEY (question_type_id) REFERENCES question.question_type(id),
+    FOREIGN KEY (quest_id) REFERENCES question.quest(id)            ,
     FOREIGN KEY (catalog_id) REFERENCES question.catalog(id)
 );
 
