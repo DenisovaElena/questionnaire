@@ -14,8 +14,8 @@ public class QuestionRestController extends AbstractQuestionRestController {
     public static final String REST_URL = "/rest/profile/quests/{questId}/questions";
     @Override
     @GetMapping(value = "/{id}")
-    public Question get(@PathVariable("id") int id) {
-        return super.get(id);
+    public Question get(@PathVariable("id") int id, @PathVariable("id") int questId) {
+        return super.get(id, questId);
     }
 
     @Override
