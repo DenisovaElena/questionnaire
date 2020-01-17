@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 import ru.gbuac.dao.QuestRepository;
 import ru.gbuac.model.Quest;
+import ru.gbuac.model.Question;
 import ru.gbuac.util.exception.NotFoundException;
 
 import java.util.List;
@@ -43,5 +44,10 @@ public class QuestServiceImpl implements QuestService {
     @Override
     public void delete(int id) throws NotFoundException {
         questRepository.delete(id);
+    }
+
+    @Override
+    public List<Question> getAll(int questId) {
+        return questRepository.getAll(questId);
     }
 }

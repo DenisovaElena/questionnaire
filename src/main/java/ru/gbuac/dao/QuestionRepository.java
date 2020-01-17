@@ -7,6 +7,8 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 import ru.gbuac.model.Question;
 
+import java.util.List;
+
 @Transactional(readOnly = true)
 public interface QuestionRepository extends JpaRepository<Question, Integer> {
     @Transactional

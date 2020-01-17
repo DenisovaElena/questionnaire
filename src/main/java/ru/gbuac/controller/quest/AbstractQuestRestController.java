@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import ru.gbuac.model.Quest;
+import ru.gbuac.model.Question;
 import ru.gbuac.service.AnswerService;
 import ru.gbuac.service.QuestService;
 
@@ -24,7 +25,7 @@ public abstract class AbstractQuestRestController {
     }
 
     public List<Quest> getAll() {
-        LOG.info("getAll");
+        LOG.info("getAllQuests");
         return questService.getAll();
     }
 
@@ -43,5 +44,10 @@ public abstract class AbstractQuestRestController {
     public void delete(int id) {
         LOG.info("delete " + id);
         questService.delete(id);
+    }
+
+    public List<Question> getAll(int questId) {
+        LOG.info("getAll");
+        return questService.getAll(questId);
     }
 }

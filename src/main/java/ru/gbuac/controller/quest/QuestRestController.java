@@ -3,6 +3,7 @@ package ru.gbuac.controller.quest;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import ru.gbuac.model.Quest;
+import ru.gbuac.model.Question;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -37,5 +38,11 @@ public class QuestRestController extends AbstractQuestRestController {
         } else {
             return super.update(quest, quest.getId());
         }
+    }
+
+    @Override
+    @GetMapping(value = "/{questId}/questions")
+    public List<Question> getAll(int questId) {
+        return super.getAll(questId);
     }
 }
