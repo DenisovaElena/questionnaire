@@ -29,8 +29,8 @@ public class Result extends BaseEntity {
     private String username;
 
     @NotNull
-    @Enumerated(EnumType.ORDINAL)
-    @Column(name = "status_id")
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status")
     private Status status;
 
     @ManyToOne(fetch = FetchType.EAGER)

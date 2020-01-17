@@ -88,7 +88,7 @@ CREATE TABLE question.result
     answer_modified         TIMESTAMP                                          ,
     quest_id                INTEGER                                            ,
     username                VARCHAR                                            ,
-    status_id               INTEGER                                            ,
+    status                  VARCHAR                                            ,
     FOREIGN KEY (quest_id) REFERENCES question.quest(id)
 );
 
